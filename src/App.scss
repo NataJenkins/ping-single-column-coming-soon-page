@@ -1,1 +1,149 @@
 @import "./_base.scss";
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 80px 37px 50px 37px;
+    box-sizing: border-box;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 710px;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    &-content {
+        width: 100%;
+        box-sizing: border-box;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        .logo {
+            align-self: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: $gray;
+            font-size: 48;
+            font-weight: 300;
+            margin-bottom: 16px;
+            span {
+                font-weight: 700;
+                color: $very-dark-blue;
+            }
+        }
+        h2 {
+            color: $very-dark-blue;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        form {
+            margin: 40px 0px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            .input-container {
+                flex-grow: 1;
+                .error-span {
+                    text-align: left;
+                    color: $light-red;
+                    margin-left: 30px;
+                    margin-top: 5px;
+                }
+            }
+            input {
+                outline: none;
+                border: 1px solid $pale-blue;
+                font-size: 16px;
+                padding: 18px 30px;
+                box-sizing: border-box;
+                width: 100%;
+                border-radius: 28px;
+                &::placeholder {
+                    color: $pale-blue;
+                }
+                &.error {
+                    border-color: $light-red;
+                }
+            }
+            button {
+                background-color: $blue;
+                color: white;
+                border: none;
+                box-sizing: border-box;
+                padding: 19px;
+                width: 200px;
+                font-size: 16px;
+                font-weight: 600;
+                border-radius: 28px;
+                align-self: baseline;
+                &:hover {
+                    background-color: rgba($blue, 0.7);
+                }
+            }
+        }
+        .illustration {
+            margin-top: 54px;
+            // margin-bottom: 90px;
+            width: 100%;
+        }
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .copyright {
+            color: $gray;
+            font-size: 12px;
+            font-weight: 300;
+        }
+        .icons {
+            display: flex;
+            margin-bottom: 20px;
+            gap: 11px;
+            .icon {
+                height: 31px;
+                width: 31px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba($blue, 0.2);
+                &:hover {
+                    background-color: $blue;
+                    path {
+                        fill: white;
+                    }
+                }
+                path {
+                    fill: $blue;
+                }
+            }
+        }
+    }
+    @media (max-width: 425px) {
+        &-content {
+            h1 {
+                font-size: 22px;
+            }
+            h2 {
+                font-size: 12px;
+            }
+            form {
+                flex-direction: column;
+                .error-span {
+                    text-align: center;
+                }
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
